@@ -4,6 +4,10 @@
     box-sizing:border-box;
     font-family: 'Roboto',sans-serif;
 }
+html{
+    font-size:16px;
+    
+}
 .navbar{
     width: 100%;
     display: flex;
@@ -14,12 +18,16 @@
     z-index: 10;
     position: fixed;
     top:0px;
+    flex-shrink: 1;
+    flex-wrap: wrap;
 
 }
 .categories{
    display: flex;
    align-items: center;
    justify-content: space-between;
+   flex-shrink: 2;
+   overflow: hidden;
 }
 .categories li{
     list-style:none;
@@ -45,7 +53,7 @@
     color:red;
 }
 .hero-section{
-    width: 100%;
+    width: 100vw;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr 1fr;
@@ -112,8 +120,8 @@
     background-color: black;
     display: flex;
     justify-content: space-evenly;
-    height: 5rem;
-    padding: .9rem;
+    
+    padding:  2rem .9rem;
 }
 .companies img{
     padding:5px 10px;
@@ -395,4 +403,31 @@ p{
 }
 .copy  span{
     color:red;
+}
+
+
+@media  screen and (max-width:900px) and (min-width:200px) {
+    .hero-section{
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .companies,.super73,.extra-info ,.further-detail,.footer,.about{
+        flex-direction: column;
+
+    }
+    .promotion,.explore,.intro-img,.super-img,.super73-intro{
+        width: 100%;
+
+    }
+    .navbar{
+        overflow: hidden;
+    }
+    .shopping{
+        grid-template-columns: repeat(2,20rem);
+        
+    }
+    html{
+        font-size:10px;
+    }
+    
 }
